@@ -27,11 +27,17 @@ Everything is 🤮 again!  % becomes 🤮🤮🤮🤮🤮🤮🤮🤮🤮🤮 �
 
 ## Installation
 
-Install using LaTeX3 build system:
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/yourusername/vomit.git
+    cd vomit
+    ```
 
-```bash
-l3build install
-```
+2. Install using LaTeX3 build system:
+
+    ```bash
+    l3build install
+    ```
 
 This will compile the `.dtx` and install `vomit.cls` into your local TeX tree.
 
