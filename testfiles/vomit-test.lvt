@@ -1,0 +1,35 @@
+\input regression-test.tex
+\documentclass{vomit}
+
+\begin{document}
+
+\START
+
+\TEST{English}{
+    This is a test.
+}
+
+\TEST{Numbers}{
+    1234567890
+}
+
+\TEST{Symbols}{
+    !@#$%^&*()_+-=[]{}|;:',.<>/?~
+}
+
+\TEST{Mixed}{
+    Hello, world! 123 😊
+}
+
+\TEST{Japanese}{
+    こんにちは、世界！
+}
+
+\TEST{LongText}{
+    The quick brown fox jumps over the lazy dog.
+    Testing if all letters are replaced by emojis correctly.
+}
+
+\END
+
+\end{document}
