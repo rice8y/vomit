@@ -30,7 +30,7 @@ Everything is 🤮 again!  % becomes 🤮🤮🤮🤮🤮🤮🤮🤮🤮🤮 �
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/yourusername/vomit.git
+    git clone https://github.com/rice8y/vomit.git
     cd vomit
     ```
 
