@@ -1,6 +1,7 @@
 # Vomit Class 🤮
 
-Turn all your LaTeX text into vomit… literally! Every non-command character becomes the vomit emoji 🤮. A fun demo of LuaTeX callbacks.
+Turn all your LaTeX text into vomit… literally! Every non-command character becomes the vomit emoji 🤮.  
+A fun demo of LuaTeX callbacks.
 
 ## Features
 
@@ -41,7 +42,7 @@ Everything is 🤮 again!  % becomes 🤮🤮🤮🤮🤮🤮🤮🤮🤮🤮 �
 
 This will compile the `.dtx` and install `vomit.cls` into your local TeX tree.
 
-Requirements: LuaLaTeX + [bxcoloremoji](https://ctan.org/pkg/bxcoloremoji)
+**Requirements:** LuaLaTeX + [bxcoloremoji](https://ctan.org/pkg/bxcoloremoji)
 
 ## License
 
