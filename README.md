@@ -46,12 +46,21 @@ Everything is 🤮 again!  % becomes 🤮🤮🤮🤮🤮🤮🤮🤮🤮🤮 �
 
 1. Download the `vomit.cls` file from the repository.  
 2. Upload `vomit.cls` to the root folder of your Overleaf project.  
-3. In your main `.tex` file, set:
+3. Since Overleaf (as of TeX Live 2024) does not include the latest `BXcoloremoji` package (registered on CTAN on 2024-11-11), you need to manually add it:
+   - Download `bxcoloremoji.sty` and `bxcoloremoji-names.def` from https://github.com/zr-tex8r/BXcoloremoji  
+   - Upload both files to your Overleaf project folder.
+4. In your main `.tex` file, set:
    ```tex
    \documentclass{vomit}
    ```
 
-**Requirements:** LuaLaTeX + [bxcoloremoji](https://ctan.org/pkg/bxcoloremoji)
+**Requirements**
+
+- **LuaLaTeX**  
+- **BXcoloremoji** package:
+  - **Local installation:** TeX Live 2025 or later includes `BXcoloremoji` by default.  
+  - **Overleaf:** TeX Live 2024 does not include the latest `BXcoloremoji`. You must manually download `bxcoloremoji.sty` and `bxcoloremoji-names.def` from https://github.com/zr-tex8r/BXcoloremoji and upload them to your project folder.
+
 
 ## License
 
