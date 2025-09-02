@@ -22,6 +22,28 @@
 %% in the same archive or directory.)
 \ProvidesClass{vomit}
   [2025/09/02 v1.0 Universal Emoji Replacer Class]
+%%
+%% This is file `vomit.cls',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% vomit.dtx  (with options: `class')
+%%
+%% IMPORTANT NOTICE:
+%%
+%% For the copyright see the source file.
+%%
+%% Any modified versions of this file must be renamed
+%% with new filenames distinct from vomit.cls.
+%%
+%% For distribution of the original source see the terms
+%% for copying and modification in the file vomit.dtx.
+%%
+%% This generated file may be distributed as long as the
+%% original source files, as listed above, are part of the
+%% same distribution. (The sources need not necessarily be
+%% in the same archive or directory.)
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{vomit}[2025/09/02 v1.0 Universal Emoji Replacer Class]
 
@@ -79,6 +101,39 @@ local function trim(s)
   return (s:gsub("^%s+", ""):gsub("%s+$", ""))
 end
 
+local function vomitify_argument(text)
+  local len = utf8_len(text)
+  local result = {}
+
+  for i = 1, len do
+    local ch = utf8_sub_chars(text, i, i)
+    if ch:match("^[%w%s%p]$") and not ch:match("^[{}\\]$") then
+      table.insert(result, "\\coloremojicode{1F92E}")
+    else
+      table.insert(result, ch)
+    end
+  end
+
+  return table.concat(result)
+end
+
+local function process_command_arguments(line)
+  local result = line:gsub("(\\%w+)({[^}]*})", function(cmd, arg)
+    local cmd_name = cmd:match("\\(.+)")
+    if cmd_name == "dummy" or cmd_name == "section" or cmd_name == "title" or
+       cmd_name == "subsection" or cmd_name == "subsubsection" then
+      local inner = arg:match("{(.*)}")
+      if inner then
+        local converted_inner = vomitify_argument(inner)
+        return cmd .. "{" .. converted_inner .. "}"
+      end
+    end
+    return cmd .. arg
+  end)
+
+  return result
+end
+
 local function vomitify_text(line)
   if type(line) ~= "string" then
     return line
@@ -89,7 +144,20 @@ local function vomitify_text(line)
   end
 
   local t = trim(line)
-  if t:match("^\\") or t == "" or t:match("^%%") then
+
+  if t:match("^%%") then
+    return line
+  end
+
+  if t == "" then
+    return line
+  end
+
+  if t:match("^\\%w+{") then
+    return process_command_arguments(line)
+  end
+
+  if t:match("^\\") then
     return line
   end
 
