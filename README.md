@@ -28,19 +28,30 @@ Everything is 🤮 again!  % becomes 🤮🤮🤮🤮🤮🤮🤮🤮🤮🤮 �
 
 ## Installation
 
+### Local installation
+
 1. Clone the repository:
     ```bash
     git clone https://github.com/rice8y/vomit.git
     cd vomit
     ```
 
-2. Install using LaTeX3 build system:
-
+2. Install using the LaTeX3 build system:
     ```bash
     l3build install
     ```
+   This will compile the `.dtx` and install `vomit.cls` into your local TeX tree.
 
-This will compile the `.dtx` and install `vomit.cls` into your local TeX tree.
+---
+
+### Overleaf installation
+
+1. Download the `vomit.cls` file from the repository.  
+2. Upload `vomit.cls` to the root folder of your Overleaf project.  
+3. In your main `.tex` file, set:
+   ```tex
+   \documentclass{vomit}
+   ```
 
 **Requirements:** LuaLaTeX + [bxcoloremoji](https://ctan.org/pkg/bxcoloremoji)
 
