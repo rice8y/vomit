@@ -49,10 +49,6 @@ Everything is 🤮 again!  % becomes 🤮🤮🤮🤮🤮🤮🤮🤮🤮🤮 �
 3. Since Overleaf (as of TeX Live 2024) does not include the latest `BXcoloremoji` package (registered on CTAN on 2024-11-11), you need to manually add it:
    - Download `bxcoloremoji.sty` and `bxcoloremoji-names.def` from https://github.com/zr-tex8r/BXcoloremoji  
    - Upload both files to your Overleaf project folder.
-4. In your main `.tex` file, set:
-   ```tex
-   \documentclass{vomit}
-   ```
 
 **Requirements**
 
