@@ -42,8 +42,6 @@ Everything is 🤮 again!  % becomes 🤮🤮🤮🤮🤮🤮🤮🤮🤮🤮 �
     ```
    This will compile the `.dtx` and install `vomit.cls` into your local TeX tree.
 
----
-
 ### Overleaf installation
 
 1. Download the `vomit.cls` file from the repository.  
