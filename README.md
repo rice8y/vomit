@@ -5,7 +5,7 @@ A fun demo of LuaTeX callbacks.
 
 ## Features
 
-- Replaces text characters with `\coloremoji{🤮}`
+- Replaces text characters with `\coloremojicode{1F92E}`
 - Keeps LaTeX commands, braces, and spaces intact
 - Temporarily disable/re-enable vomit mode with `\stopvomit` / `\startvomit`
 
