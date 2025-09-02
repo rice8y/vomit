@@ -125,7 +125,7 @@ local function vomitify_text(line)
       table.insert(res, ch)
       i = i + 1
     else
-      table.insert(res, "\\coloremoji{🤮}")
+      table.insert(res, "\\coloremojicode{1F92E}")
       i = i + 1
     end
   end
